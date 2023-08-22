@@ -1,13 +1,127 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* variables */
+:root {
+  /* Primary */
+  --cyan: hsl(180, 66%, 49%);
+  --dark-violet: hsl(257, 27%, 26%);
+
+  /* Secondary */
+  --red: hsl(0, 87%, 67%);
+
+  /* Neutral */
+  --gray: hsl(0, 0%, 75%);
+  --grayish-violet: hsl(257, 7%, 63%);
+  --very-dark-blue: hsl(255, 11%, 22%);
+  --very-dark-violet: hsl(260, 8%, 14%);
+}
+
+
+/*boost*/
+.boost{
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+  background-color: var(--dark-violet);
+}
+#imgboost{
+
+}
+.boostDiv{
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+}
+#boostLine{
+ color: #fff;
+ font-weight: 600;
+  
+}
+#boostbtn
+{
+  background-color: var(--cyan);
+  padding: 10px 25px;
+  border: none;
+  font-weight: 500;
+  border-radius: 25px;
+  color: #fff;
+  margin-top: 10px;
+ 
+  
+ 
+}
+
+/*footer*/
+.footer{
+ background-color: var(--very-dark-violet);
+ color: #fff;
+ padding: 50px 150px 20px;
+
+}
+#footerLogo{
+ margin: auto;
+}
+
+.company{
+  margin-left: 80px;
+}
+.resources{
+  margin-left: 80px;
+}
+.features{
+  margin-left: 170px;
+}
+.icon{
+ margin-left: 80px;
+}
+.footer li{
+  color: var(--gray);
+  font-size: 0.9rem;
+  padding: 5px 0px ;
+}
+.footer h3{
+  font-size: 1rem;
+  font-weight: 600;
+}
+.icon li{
+  margin-left: 18px;
+}
+@media   (max-width: 800px) {
+  .footer{
+    flex-direction: column;
+    padding: 50px 0;
+    align-items: center;
+   
+  }
+  .company{
+    margin-left: 0px;
+    padding-top: 30px;
+  }
+  .resources{
+    margin-left: 0px;
+    padding-top: 30px;
+  }
+  .features{
+    margin-left: 0px;
+    padding-top: 30px;
+  }
+  .icon{
+   margin-left: 0px;
+   padding-top: 30px;
+  }
+  .footer li{
+    font-size: 1rem;
+  }
+  .footer ul{
+    margin: 0;
+  }
 }
