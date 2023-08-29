@@ -128,35 +128,74 @@ html{
   margin-top: -80px;
 }
 /* shortener */
-
-.shortenForm{
+.shorten{
   display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   right:50%;
-  transform: translateX(50%);
-  height:120px;
+  transform: translateX(50%); 
+  z-index: 2;
+  width: 100%; 
+}
+.shortenForm{
+  
+  display: flex;
+  gap:5px;
   width:75%;
+  position: relative;
+  align-items: center;
+  height:120px;
   background-color: var(--dark-violet);
   z-index: 2;
   background-image: url('./images/bg-shorten-desktop.svg');
   border-radius: 6px;
   
 }
+.result{
+  display: flex;
+  background-color: #fff;
+  gap:7%;
+  width:75%;
+  justify-content: space-between;
+  font-size: 16px;
+  align-items: center;
+  padding: 10px 3%;
+  margin: 10px 0;
+  border-radius: 7px;
+}
+.original_link{
+  width: 60%;
+  align-items: center;
+  padding: 10px;
+}
+.short_link{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap:5%;
+  background-color: #fff;
+  padding-right: 10px;
+  color: var(--cyan);
+}
+
 #shorten-input{
   position: absolute;
-  left:5%;
   margin-right: 2px;
   top:50%;
+  left:5%;
   transform: translateY(-50%);
   width:70%;
-  height: 50px;
+  height: 50%; 
   border-radius: 6px;
   border: none;
-  height: 60%;
+  overflow: hidden;
+  
 }
 #shorten-btn{
   position: absolute;
-  width:18%;
+  width:15%;
+  float: left;
   right:5%;
   top:50%;
   transform: translateY(-50%);
@@ -166,7 +205,17 @@ html{
   border: none;
   color: #fff;
   font-weight: 600;
-  height: 60%;
+  height:50%;
+}
+#copy{
+  background-color: var(--cyan);
+  padding: 5px 15px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 7px;
+  margin: 0 10px;
+  box-sizing: border-box;
 }
 
 /*advance*/
