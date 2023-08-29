@@ -10,8 +10,8 @@ function App() {
   return (
     <div className="App">
      <Header/>
-     <Shortener/>
      <Showcase/>
+     <Shortener/>
      <Advanced/>
      <Boost/>
      <Footer/>

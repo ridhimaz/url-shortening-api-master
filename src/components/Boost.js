@@ -8,7 +8,7 @@ export default function Boost() {
         <div className="boost ">
         <picture id="imgBoost">
             <source srcSet={bgDesktop}/>
-            <img src={bgMobile} width="1270px" height="160px"alt=""/>
+            <img src={bgMobile} width="1500px" height="160px"alt=""/>
         </picture>
         <div className="boostDiv text-center">
             <h3 id='boostLine' >Boost your links today</h3>

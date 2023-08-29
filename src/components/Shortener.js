@@ -31,21 +31,22 @@ export default function Shortener() {
                 <input id="shorten-input"type="url" placeholder='Shorten a link here' value={text}
                   onChange={(e)=>setText(e.target.value)}
                 />
-                <button id='shorten-btn' type="submit" onClick={handleSubmit}>Shorten It!</button>
+                <button id='shorten-btn'  type="submit" onClick={handleSubmit}>Shorten It!</button>
             </div>
           </form>
           </div>
          
           <div>
             <article>
-              <h6>{links.original_link}</h6>
+              {/* <h6>{links.original_link}</h6> */}
             </article>
+          {text ?
             <article className='hide'>
               <ul>
                 <li><button>{links.full_short_link}</button></li>
                 <li><button>Copy</button></li>
               </ul>
-            </article>
+            </article>: ""}
           </div>
         </section>
     </>
