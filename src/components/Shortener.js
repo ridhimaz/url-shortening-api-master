@@ -22,8 +22,19 @@ export default function Shortener() {
       alert("Input is empty")
     }
     else {
+    
+     
       const shortenLink = async () => {
         const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${text}`)
+       
+        
+        if(!res.ok){
+          document.getElementById('shorten-input').style.borderStyle = "solid";
+          document.getElementById('shorten-input').style.borderColor = 'hsl(0, 87%, 67%)';
+          document.querySelector('.error-msg').innerHTML = 'Please enter a valid link';
+         
+    }
+
         const data = await res.json()
         console.log(data)
         setLinks(data.result)
@@ -49,20 +60,23 @@ export default function Shortener() {
                 onChange={(e) => setText(e.target.value)}
               />
               <button id='shorten-btn' type="submit" onClick={handleSubmit}>Shorten It!</button>
+              <div className='error-msg'></div>
             </form>
-         
-
-
-          <div className='result'>
-            <article className='original-link'>
-              <h6>{links.original_link}</h6>
+        
+          <div className='container'>
+          <div className='row  '>
+          <article className='col-lg-7 original-link'>
+              <h6>{links.original_link.slice(0,50)}...</h6>
             </article>
-
-            <article className='short_link'>
+            <article className='col-lg-5 short_link'>
                 <h6>{links.full_short_link}</h6>
                 <button onClick={handleCopy} id='copy'>{copy}</button>
              
             </article>
+          </div>
+            
+
+           
           </div>
         </div>
       </section>
