@@ -1,31 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import "../components/Shortenerstyles.css"
 
-const getLocalStorage = () => {
-  let links = localStorage.getItem("links")
-  if (links) {
-    return localStorage.getItem("links")
-  }
-  else {
-    return ;
-  }
-}
-const getOriginalLink =() => {
- 
-  let original_link=localStorage.getItem("original_link");
- console.log(original_link)
-  if(original_link)
-  {
-    return original_link?.length>50?original_link?.slice(0,50):original_link;
-  }
-  else{
-    return ;
-  }
-}
+
+
 export default function Shortener() {
   const [text, setText] = useState("")
-  const [original_link,setOriginal_link]=useState(getOriginalLink())
-  const [links, setLinks] = useState(getLocalStorage())
+  const [original_link,setOriginal_link]=useState("");
+  const [isOpen,setIsopen]=useState(false);
+  const [links, setLinks] = useState("")
   const [copy, setcopy] = useState("Copy");
 
   const handleSubmit = (e) => {
@@ -55,16 +37,18 @@ export default function Shortener() {
             document.getElementById('shorten-input').style.borderColor = 'hsl(0, 87%, 67%)';
             document.querySelector('.error-msg').innerHTML = 'Please enter a valid link';
           }
-
           const result = await res.json();
           console.log(result.result_url);
           setLinks(result.result_url);
           setOriginal_link(text);
-          localStorage.setItem("original_link", JSON.stringify(original_link))
+       
           console.log(original_link);
+          
           setText("")
+          setIsopen(true);
         } catch (error) {
           console.error(error);
+          alert("API Error: URL is invalid")
         }
       }
       shortenLink();
@@ -74,9 +58,7 @@ export default function Shortener() {
     navigator.clipboard.writeText(links);
     setcopy("Copied!")
   }
-  useEffect(() => {
-    localStorage.setItem("links", links)
-  }, [links])
+
 
   return (
     <>
@@ -89,18 +71,15 @@ export default function Shortener() {
             <button id='shorten-btn' type="submit" onClick={handleSubmit}>Shorten It!</button>
           
           </form>
-
+         {isOpen && 
           <div className='container'>
-         
-            
              <h6>{original_link}...</h6>
-           
               <article className='links'>
                 <h6>{links}</h6>
                 <button onClick={handleCopy} id='copy'>{copy}</button>
               </article>
             </div>
-         
+}
         </div>
       </section>
     </>
