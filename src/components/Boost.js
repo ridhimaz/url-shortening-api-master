@@ -5,7 +5,7 @@ export default function Boost() {
   return (
         <>
         <section >
-        <div className="boost ">
+        <div className="boost">
         <picture id="imgBoost">
             <source srcSet={bgDesktop}/>
             <img src={bgMobile} width="1500px" height="160px"alt=""/>
