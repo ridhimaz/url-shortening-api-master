@@ -5,9 +5,8 @@ import fully from "../images/icon-fully-customizable.svg"
 export default function Advanced() {
   return (
     <>
-
       <section className="advance">
-        <div className="adv-top" style={{marginTop:"200px"}}>
+        <div className="adv-top">
           <h2 className="text-center bold" >Advanced Statistics</h2>
           <p className="text-center">
             Track how your links are performing across the web with our advanced statistics dashboard.</p>

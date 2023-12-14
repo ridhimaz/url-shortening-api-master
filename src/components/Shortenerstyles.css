@@ -1,24 +1,27 @@
 .container{
-    width:75%;
-    display: flex;
-    padding: 2% 5% ;
-    margin: 10px ;
-    font-size: 1%;
-    justify-content:space-between;
-    align-items: center;
-    background-color: #fff;
-  }
+  width:75%;
+  display: flex;
+  padding: 2% 5% ;
+  margin: 10px ;
+  font-size: 1%;
+  justify-content:space-between;
+  align-items: center;
+  background-color: #fff;
  
-  .links{
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-  }
+}
 
-
+.links{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+.original_link{
+  display: flex;
+}
   @media screen and  (max-width:1000px) {
     .container{
       flex-direction: column;
+      width:100%;
     }
     
   }

@@ -73,7 +73,9 @@ export default function Shortener() {
           </form>
          {isOpen && 
           <div className='container'>
-             <h6>{original_link}...</h6>
+           
+             <h6>{original_link?.length>35?original_link?.slice(0,35):original_link}...</h6>
+           
               <article className='links'>
                 <h6>{links}</h6>
                 <button onClick={handleCopy} id='copy'>{copy}</button>
