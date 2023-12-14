@@ -11,10 +11,12 @@ const getLocalStorage = () => {
   }
 }
 const getOriginalLink =() => {
+ 
   let original_link=localStorage.getItem("original_link");
+ console.log(original_link)
   if(original_link)
   {
-    return original_link;
+    return original_link?.length>50?original_link?.slice(0,50):original_link;
   }
   else{
     return ;
@@ -58,6 +60,7 @@ export default function Shortener() {
           console.log(result.result_url);
           setLinks(result.result_url);
           setOriginal_link(text);
+          localStorage.setItem("original_link", JSON.stringify(original_link))
           console.log(original_link);
           setText("")
         } catch (error) {
@@ -75,10 +78,6 @@ export default function Shortener() {
     localStorage.setItem("links", links)
   }, [links])
 
-  useEffect(() => {
-    localStorage.setItem("original_link", original_link)
-  }, [original_link])
-
   return (
     <>
       <section>
@@ -94,7 +93,7 @@ export default function Shortener() {
           <div className='container'>
          
             
-             <h6>{original_link.length > 50 ? original_link.slice(0, 50) : original_link}...</h6>
+             <h6>{original_link}...</h6>
            
               <article className='links'>
                 <h6>{links}</h6>
