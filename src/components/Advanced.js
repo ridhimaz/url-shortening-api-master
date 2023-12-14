@@ -7,7 +7,7 @@ export default function Advanced() {
     <>
 
       <section className="advance">
-        <div className="adv-top">
+        <div className="adv-top" style={{marginTop:"200px"}}>
           <h2 className="text-center bold" >Advanced Statistics</h2>
           <p className="text-center">
             Track how your links are performing across the web with our advanced statistics dashboard.</p>
