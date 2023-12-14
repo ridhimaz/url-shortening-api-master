@@ -152,30 +152,9 @@ html{
   border-radius: 6px;
   
 }
-.container{
-  width:75%;
-  background-color: #fff;
-  padding: 10px 0;
-  margin: 10px 0;
-  font-size: 1%;
-  justify-content: center;
-}
-.row{
-  text-align: start;
-  padding: 0 10%;
-}
-/* .result{
-  display: flex;
-  background-color: #fff;
-  gap:7%;
- 
-  justify-content: space-between;
-  font-size: 16px;
-  align-items: center;
-  padding: 10px 3%;
-  margin: 10px 0;
-  border-radius: 7px;
-} */
+
+
+
 .original_link h6 {
  display: flex;
   text-align: start;
